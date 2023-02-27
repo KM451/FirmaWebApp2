@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FirmaMobileMauiApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:FirmaMobileMauiApp.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <FlyoutItem Title="About" Icon="icon_about.png">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate views:AboutPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Notes" Icon="icon_notes.png">
+        <ShellContent Route="AllNotesPage" ContentTemplate="{DataTemplate views:AllNotesPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Kontrahenci" Icon="icon_feed.png">
+        <ShellContent Route="KontrahenciPage" ContentTemplate="{DataTemplate views:KontrahenciPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Typy produktów" Icon="icon_feed.png">
+        <ShellContent Route="TypyProduktowPage" ContentTemplate="{DataTemplate views:TypyProduktowPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Produkty" Icon="icon_feed.png">
+        <ShellContent Route="ProduktyPage" ContentTemplate="{DataTemplate views:ProduktyPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Zlecenia zakupu" Icon="icon_feed.png">
+        <ShellContent Route="ZleceniaZakupuPage" ContentTemplate="{DataTemplate views:ZleceniaZakupuPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Pozycje zlecenia zakupu" Icon="icon_feed.png">
+        <ShellContent Route="PozycjeZZPage" ContentTemplate="{DataTemplate views:PozycjeZZPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Rodzaje transportu" Icon="icon_feed.png">
+        <ShellContent Route="RodzajeTransportuPage" ContentTemplate="{DataTemplate views:RodzajeTransportuPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Sposoby dostawy" Icon="icon_feed.png">
+        <ShellContent Route="SposobyDostawyPage" ContentTemplate="{DataTemplate views:SposobyDostawyPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Typy transakcji" Icon="icon_feed.png">
+        <ShellContent Route="TypyTransakcjiPage" ContentTemplate="{DataTemplate views:TypyTransakcjiPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Sposoby płatności" Icon="icon_feed.png">
+        <ShellContent Route="SposobyPlatnosciPage" ContentTemplate="{DataTemplate views:SposobyPlatnosciPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Zlecenia kompletacji" Icon="icon_feed.png">
+        <ShellContent Route="ZleceniaKompletacjiPage" ContentTemplate="{DataTemplate views:ZleceniaKompletacjiPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Składniki zlecenia kompletacji" Icon="icon_feed.png">
+        <ShellContent Route="SkladnikiZKPage" ContentTemplate="{DataTemplate views:SkladnikiZKPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Produkty uboczne zlecenia kompletacji" Icon="icon_feed.png">
+        <ShellContent Route="ProduktyUboczneZKPage" ContentTemplate="{DataTemplate views:ProduktyUboczneZKPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Monterzy" Icon="icon_feed.png">
+        <ShellContent Route="MonterzyPage" ContentTemplate="{DataTemplate views:MonterzyPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Typy cen" Icon="icon_feed.png">
+        <ShellContent Route="TypyCenPage" ContentTemplate="{DataTemplate views:TypyCenPage}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Ceny" Icon="icon_feed.png">
+        <ShellContent Route="CenyPage" ContentTemplate="{DataTemplate views:CenyPage}" />
+    </FlyoutItem>
+
+    <!--<TabBar>
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate views:AboutPage}"
+            Icon="{OnPlatform 'icon_about.png', iOS='icon_about_ios.png', MacCatalyst='icon_about_ios.png'}" />
+        
+       <ShellContent
+            Title="Notes"
+            ContentTemplate="{DataTemplate views:AllNotesPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+
+        <ShellContent
+            Title="Monterzy"
+            ContentTemplate="{DataTemplate views:MonterzyPage}"
+            Icon="{OnPlatform 'icon_notes.png', iOS='icon_notes_ios.png', MacCatalyst='icon_notes_ios.png'}" />
+    </TabBar>-->
+    
+    
+    
+
+</Shell>

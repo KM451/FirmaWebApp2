@@ -1,0 +1,166 @@
+﻿@model Firma.Data.Model.Produkt
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Szczegoly;
+}
+<h1>@Resource.Szczegoly</h1>
+<div>
+    <h4>@Resource.Produkt</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kod)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kod)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DodatkowaNazwa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DodatkowaNazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.JednostkaMiary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JednostkaMiary)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Symbol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SWW_PKWiU)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SWW_PKWiU)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Producent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Producent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FotoURL)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FotoURL)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StawkaVatZakupu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StawkaVatZakupu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StawkaVatSprzedazy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StawkaVatSprzedazy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OdwrotneObciazenie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OdwrotneObciazenie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PodzielonaPlatnosc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PodzielonaPlatnosc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StawkaCla)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StawkaCla)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StwkaAkcyzy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StwkaAkcyzy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KodPcn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KodPcn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kraj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kraj)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzasKompletacji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzasKompletacji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywna)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywna)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypProduktu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypProduktu.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dostawca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dostawca.Akronim)
+        </dd>
+        <dd></dd>
+        <dd></dd>
+        <h5>@Resource.Ceny</h5>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Typ ceny</th>
+                    <th>Wartość</th>
+                    <th>Waluta</th>
+                </tr>
+                @foreach (var item in Model.Cena)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdTypuCeny)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Wartosc)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Waluta)
+                        </td>
+                        <td>
+                            <a asp-controller="Cena" asp-action="Edit" asp-route-id="@item.IdCeny">@Resource.Edycja</a> |
+                            <a asp-controller="Cena" asp-action="Delete" asp-route-id="@item.IdCeny">@Resource.Usun</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdProduktu">@Resource.Usun</a> |
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>

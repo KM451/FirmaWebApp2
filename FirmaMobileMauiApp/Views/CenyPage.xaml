@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.CenyPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <RefreshView x:DataType="viewModels:CenyViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:DataType="model:CenyForView" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Kod i Nazwa produktu:" Grid.Row="0" Grid.Column="0"
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="Rodzaj ceny:" Grid.Row="1" Grid.Column="0"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="Wartość:" Grid.Row="2" Grid.Column="0"
+                            Style="{DynamicResource ListItemDetailTextStyle}" 
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="Waluta:" Grid.Row="3" Grid.Column="0"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="{Binding ProduktDane}" Grid.Row="0" Grid.Column="1"
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="13" />
+                        <Label Text="{Binding TypCenyNazwa}" Grid.Row="1" Grid.Column="1"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Label Text="{Binding Wartosc, StringFormat='{0:N2}'}" Grid.Row="2" Grid.Column="1"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Label Text="{Binding Waluta}" Grid.Row="3" Grid.Column="1"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Button Text="Usuń" BackgroundColor="LightBlue" Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:CenyViewModel}}, 
+                            Path=DeleteItemCommand}" CommandParameter="{Binding .}  " Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:CenyViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

@@ -1,0 +1,56 @@
+﻿@model FirmaWebApp.Models.Shop.CartData
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+<div class="kontener">
+    <h2>Mój koszyk</h2>
+    <div>
+        <table class="tab2">
+            <colgroup>
+                <col style="width:800px" />
+                <col style="width:200px" />
+                <col style="width:100px" />
+                <col style="width:50px" />
+            </colgroup>
+            <tr>
+                <th>
+                    Nazwa produktu
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Ilość
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="ProduktDetails" asp-controller="Produkt" asp-route-id="@item.IdProduktu">@item.Produkt?.Nazwa</a>
+                    </td>
+                    <td>
+                        @item.Produkt?.Cena?.Where(c=>c.IdTypuCeny==1).Select(c=>c.Wartosc.ToString("N2") + " " + c.Waluta).FirstOrDefault()
+                    </td>
+                    <td>
+                        @String.Format("{0:F}", item.Ilosc)
+                    </td>
+                    <td>
+                        <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-id="@item.Id">Usuń</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h4>Razem: @Model.Total.ToString("N2") @Model.CartItems.Select(x=>x.Produkt?.Cena?.Select(w=>w.Waluta).First()).FirstOrDefault()</h4>
+    </div>
+    <div>
+        <a class="btn btn-light" asp-action="KontrahentData" asp-controller="OrderData" style="margin:40px 0px 0px 0px">Zamów</a>
+        <a class="btn btn-light" asp-action="Index" asp-controller="TypyProduktow" style="margin:40px 0px 0px 0px">Kupuj dalej</a>
+    </div>
+</div>
+
+

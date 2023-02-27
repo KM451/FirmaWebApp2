@@ -1,0 +1,140 @@
+﻿@model Firma.Data.Model.ZlecenieKompletacji
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Szczegoly;
+}
+<h1>@Resource.Szczegoly</h1>
+<div>
+    <h4>@Resource.ZlecenieKompletacji</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdZleceniaKompletacji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdZleceniaKompletacji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kontrahent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kontrahent.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produkt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produkt.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Monter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Monter.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataWystawienia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataWystawienia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OczekiwanaDataRealizacji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OczekiwanaDataRealizacji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PotwierdzonaDataRealizacji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PotwierdzonaDataRealizacji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ilosc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ilosc)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Priorytet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Priorytet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzasZlecenia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzasZlecenia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywne)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywne)
+        </dd>
+        <dd></dd>
+        <dd></dd>
+        <h5>@Resource.SkladnikiZlecenia</h5>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Produkt</th>
+                    <th>Ilość</th>
+                </tr>
+                @foreach (var item in Model.SkladnikZK)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ilosc)
+                        </td>
+                        <td>
+                            <a asp-controller="SkladnikZK" asp-action="Edit" asp-route-id="@item.IdSkladnika">@Resource.Edycja</a> |
+                            <a asp-controller="SkladnikZK" asp-action="Delete" asp-route-id="@item.IdSkladnika">@Resource.Usun</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+        <dd></dd>
+        <dd></dd>
+        <h5>@Resource.ProduktyUboczne</h5>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Produkt</th>
+                    <th>Ilość</th>
+                </tr>
+                @foreach (var item in Model.ProduktUbocznyZK)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ilosc)
+                        </td>
+                        <td>
+                            <a asp-controller="ProduktUbocznyZK" asp-action="Edit" asp-route-id="@item.IdPrUbocznego">@Resource.Edycja</a> |
+                            <a asp-controller="ProduktUbocznyZK" asp-action="Delete" asp-route-id="@item.IdPrUbocznego">@Resource.Usun</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdZleceniaKompletacji">@Resource.Edycja</a> |
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>

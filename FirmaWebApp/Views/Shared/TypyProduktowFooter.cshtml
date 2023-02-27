@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Firma.Data.Model.TypProduktu>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <a asp-action="Index" asp-controller="TypyProduktow">
+            <div class="col s12 m4">
+                <img src="~/img/bujaczka1.jpg" />
+                <h2>@item.Nazwa</h2>
+            </div>
+        </a>
+    }
+    <li>
+        <a asp-action="Index" asp-controller="Cart">Cart</a> |
+    </li>
+
+</div>

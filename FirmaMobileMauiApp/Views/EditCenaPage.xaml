@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.EditCenaPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Edycja Ceny"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:EditCenaViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Picker Title="Wybierz produkt" ItemsSource="{Binding Produkt}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedProdukt,Mode=TwoWay}" FontSize="Medium" Margin="0" />
+            <Picker Title="Wybierz typ ceny" ItemsSource="{Binding TypCeny}" ItemDisplayBinding="{Binding Typ}" 
+                    SelectedItem="{Binding SelectedTypCeny,Mode=TwoWay}" FontSize="Medium" Margin="0" />
+            <Label Text="Wartość" FontSize="Medium" />
+            <Editor Text="{Binding Wartosc, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Waluta" FontSize="Medium" />
+            <Editor Text="{Binding Waluta, Mode=TwoWay}" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Zapisz" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

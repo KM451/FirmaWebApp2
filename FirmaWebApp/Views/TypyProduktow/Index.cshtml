@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Firma.Data.Model.TypProduktu>
+
+<div>
+    <h4>Wybierz kategorię produktów</h4>
+</div>
+<div class="kontener1">
+
+    @foreach (var item in Model)
+    {
+        <a asp-action="Details" asp-controller="TypyProduktow" asp-route-id="@item.IdTypuProduktu">
+            <div class="card">
+                <div class="card-image">
+                    <img src="~/img/@item.FotoURL" class="activator" alt="">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Nazwa</h5>
+                    <p class="card-text">@item.Uwagi</p>
+                </div>
+            </div>
+        </a>
+    }
+</div>

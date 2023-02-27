@@ -1,0 +1,54 @@
+﻿@model Firma.Data.Model.PozycjaZZ
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.DodajNowyEl;
+}
+<h1>@Resource.DodajNowyEl</h1>
+<h4>@Resource.PozycjaZZ</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdZleceniaZakupu" class="control-label"></label>
+                <select asp-for="IdZleceniaZakupu" class="form-control" asp-items="ViewBag.IdZleceniaZakupu"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProduktu" class="control-label"></label>
+                <select asp-for="IdProduktu" class="form-control" asp-items="ViewBag.IdProduktu"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ilosc" class="control-label"></label>
+                <input asp-for="Ilosc" class="form-control" />
+                <span asp-validation-for="Ilosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rabat" class="control-label"></label>
+                <input asp-for="Rabat" class="form-control" />
+                <span asp-validation-for="Rabat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataRealizacji" class="control-label"></label>
+                <input asp-for="DataRealizacji" class="form-control" />
+                <span asp-validation-for="DataRealizacji" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CzyAktywna" checked="true" /> @Html.DisplayNameFor(model => model.CzyAktywna)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@Resource.Zapisz class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

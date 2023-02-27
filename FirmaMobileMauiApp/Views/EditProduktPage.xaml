@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.EditProduktPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Edycja Produktu">
+    
+    <ContentPage.BindingContext>
+        <viewModels:EditProduktViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Kod" FontSize="Medium" />
+            <Editor Text="{Binding Kod, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Nazwa" FontSize="Medium" />
+            <Editor Text="{Binding Nazwa, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Jednostka miary" FontSize="Medium" />
+            <Editor Text="{Binding JednostkaMiary, Mode=TwoWay}" FontSize="Medium"/>
+            <Picker Title="Wybierz typ produktu" ItemsSource="{Binding TypProduktu}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedTypProduktu}" FontSize="Medium" Margin="0" />
+            <Label Text="Stawka VAT zakupu" FontSize="Medium" />
+            <Editor Text="{Binding StawkaVatZakupu, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Stawka VAT sprzedaży" FontSize="Medium" />
+            <Editor Text="{Binding StawkaVatSprzedazy, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Producent" FontSize="Medium" />
+            <Editor Text="{Binding Producent, Mode=TwoWay}" FontSize="Medium"/>
+            <Picker Title="Wybierz dostawcę" ItemsSource="{Binding Dostawcy}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedDostawca}" FontSize="Medium" Margin="0" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Zapisz" Command="{Binding UpdateCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

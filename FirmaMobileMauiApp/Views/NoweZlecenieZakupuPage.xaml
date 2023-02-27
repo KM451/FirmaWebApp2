@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.NoweZlecenieZakupuPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Nowe Zlecenie Zakupu"
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Picker Title="Wybierz dostawcę" ItemsSource="{Binding Kontrahenci}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedKontrahent}" FontSize="Medium" Margin="0" />
+            <Picker Title="Wybierz rodzaj transakcji" ItemsSource="{Binding TypyTransakcji}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedTypTransakcji}" FontSize="Medium" Margin="0" />
+            <Picker Title="Wybierz sposób dostawy" ItemsSource="{Binding SposobyDostawy}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedSposobDostawy}" FontSize="Medium" Margin="0" />
+            <Picker Title="Wybierz rodzaj transportu" ItemsSource="{Binding RodzajeTransportu}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedRodzajTransportu}" FontSize="Medium" Margin="0" />
+            <Picker Title="Wybierz sposób płatności" ItemsSource="{Binding SposobyPlatnosci}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedSposobPlatnosci}" FontSize="Medium" Margin="0" />
+            <Label Text="Status" FontSize="Medium" />
+            <Editor Text="{Binding Status, Mode=TwoWay}" FontSize="Medium"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Zapisz" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

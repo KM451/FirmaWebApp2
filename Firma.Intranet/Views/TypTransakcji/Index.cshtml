@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Firma.Data.Model.TypTransakcji>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.TypyTransakcji;
+}
+<h1>@Resource.TypyTransakcji</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uwagi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywny)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uwagi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywny)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdTypuTransakcji">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdTypuTransakcji">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdTypuTransakcji">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Firma.Data.Model.ZlecenieZakupu>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.ZleceniaZakupu;
+}
+<h1>@Resource.ZleceniaZakupu</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NrOferty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kontrahent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataWystawienia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyPotwierdzone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NrPotwierdzenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RodzajTransportu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SposobDostawy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypTransakcji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SposobPlatnosci)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywne)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrOferty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontrahent.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataWystawienia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyPotwierdzone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NrPotwierdzenia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RodzajTransportu.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SposobDostawy.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypTransakcji.Nazwa)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SposobPlatnosci.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywne)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdZleceniaZakupu">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdZleceniaZakupu">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdZleceniaZakupu">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,100 @@
+﻿@model Firma.Data.Model.Kontrahent
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Szczegoly;
+}
+<h1>@Resource.Szczegoly</h1>
+<div>
+    <h4>@Resource.Kontrahent</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Akronim)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Akronim)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nip)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nip)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SposobPlatnosci)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SposobPlatnosci.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+        <dd></dd>
+        <dd></dd>
+        <h5>@Resource.Adresy</h5>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Miejscowość</th>
+                    <th>Ulica</th>
+                    <th>Nr domu</th>
+                    <th>Nr lokalu</th>
+                    <th>Kod pocztowy</th>
+                    <th>Poczta</th>
+                    <th>Kraj</th>
+                    <th>Siedziba</th>
+                    <th>Główny</th>
+                </tr>
+                @foreach (var item in Model.Adres)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Miejscowosc)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ulica)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NrDomu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NrLokalu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KodPoczowy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Poczta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kraj)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Siedziba)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Glowny)
+                        </td>
+                        <td>
+                            <a asp-controller="Adres" asp-action="Edit" asp-route-id="@item.IdAdresu">@Resource.Edycja</a> |
+                            <a asp-controller="Adres" asp-action="Delete" asp-route-id="@item.IdAdresu">@Resource.Usun</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdKontrahenta">@Resource.Edycja</a> |
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>

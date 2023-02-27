@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.NowyKontrahentPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Nowy Kontrahent"
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Akronim" FontSize="Medium" />
+            <Editor Text="{Binding Akronim, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Nazwa" FontSize="Medium" />
+            <Editor Text="{Binding Nazwa, Mode=TwoWay}" FontSize="Medium"/>
+            <Label Text="Nip" FontSize="Medium" />
+            <Editor Text="{Binding Nip, Mode=TwoWay}" FontSize="Medium"/>
+            <Picker Title="Wybierz Sposób Płatności" ItemsSource="{Binding SposobPlatnosci}" ItemDisplayBinding="{Binding Nazwa}" 
+                    SelectedItem="{Binding SelectedSposobPlatnosci}" FontSize="Medium" Margin="0" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Zapisz" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

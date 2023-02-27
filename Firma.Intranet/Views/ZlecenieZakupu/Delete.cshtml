@@ -1,0 +1,84 @@
+﻿@model Firma.Data.Model.ZlecenieZakupu
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Usuwanie;
+}
+<h1>@Resource.Usuwanie</h1>
+<h3>@Resource.CzyNapewno1</h3>
+<div>
+    <h4>@Resource.ZlecenieZakupu</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NrOferty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NrOferty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kontrahent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kontrahent.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataWystawienia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataWystawienia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyPotwierdzone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyPotwierdzone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NrPotwierdzenia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NrPotwierdzenia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RodzajTransportu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RodzajTransportu.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SposobDostawy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SposobDostawy.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TypTransakcji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TypTransakcji.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SposobPlatnosci)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SposobPlatnosci.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywne)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywne)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdZleceniaZakupu" />
+        <input type="submit" value=@Resource.Usun class="btn btn-danger" /> |
+        <a asp-action="Index">@Resource.PowrotDoListy</a>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.PozycjaZZDetailPage"
+             Title="{Binding Title}"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{Binding EditItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <ScrollView VerticalOptions="Start">
+        <StackLayout Margin="20">
+            <Label Text="Id:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding IdZleceniaZakupu}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Zlecenie Zakupu Dane:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding ZlecenieZakupuDane}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Id Produktu:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding IdProduktu}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Dane Produktu:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding ProduktDane}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Ilosc:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Ilosc}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Rabat:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Rabat}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Jednostka Miary:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding ProduktJednostkaMiary}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Data Realizacji:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding DataRealizacji, StringFormat='{0:dd.MM.yyyy}'}" FontSize="Medium" FontAttributes="Italic"/>
+
+            <Button Text="Zamknij" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

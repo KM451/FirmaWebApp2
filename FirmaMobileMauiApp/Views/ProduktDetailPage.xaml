@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.ServiceReference"
+             x:Class="FirmaMobileMauiApp.Views.ProduktDetailPage"
+             Title="{Binding Title}"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{Binding EditItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <ScrollView VerticalOptions="Start">
+        <StackLayout Margin="20">
+            <Label Text="Kod:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding Kod}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Nazwa:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Nazwa}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Dodatkowa nazwa:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding DodatkowaNazwa}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Jednostka miary:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding JednostkaMiary}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Symbol:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Symbol}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Kod SWW/PKWiU:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding SWW_PKWiU}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Producent:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Producent}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Id Typu:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding IdTypu}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Nazwa typu produktu:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding TypProduktuNazwa}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Zdjęcie produktu:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding FotoURL}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Stawka Vat zakupu:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding StawkaVatZakupu}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Stawka Vat sprzedazy:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding StawkaVatSprzedazy}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Odwrotne obciążenie:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding OdwrotneObciazenie}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Podzielona płatność:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding PodzielonaPlatnosc}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Stawka cła:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding StawkaCla}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Stwka akcyzy:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding StwkaAkcyzy}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Kod PCN:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding KodPcn}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Kraj:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding Kraj}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Czas kompletacji:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding CzasKompletacji}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Czy aktywny:" FontSize="Medium" FontAttributes="Bold" />
+            <Label Text="{Binding CzyAktywna}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Id Dostawcy:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding IdDostawcy}" FontSize="Medium" FontAttributes="Italic"/>
+            <Label Text="Nazwa dostawcy:" FontSize="Medium" FontAttributes="Bold"  />
+            <Label Text="{Binding DostawcaDane}" FontSize="Medium" FontAttributes="Italic"/>
+
+            <Button Text="Zamknij" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

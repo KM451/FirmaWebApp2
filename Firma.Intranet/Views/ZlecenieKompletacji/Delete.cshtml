@@ -1,0 +1,91 @@
+﻿@model Firma.Data.Model.ZlecenieKompletacji
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Usuwanie;
+}
+<h1>@Resource.Usuwanie</h1>
+<h3>@Resource.CzyNapewno1</h3>
+<div>
+    <h4>@Resource.ZlecenieKompletacji</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdZleceniaKompletacji)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdZleceniaKompletacji)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kontrahent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kontrahent.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Produkt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Produkt.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Monter)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Monter.Nazwa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataWystawienia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataWystawienia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OczekiwanaDataRealizacji)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OczekiwanaDataRealizacji)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PotwierdzonaDataRealizacji)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PotwierdzonaDataRealizacji)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ilosc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ilosc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Priorytet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Priorytet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzasZlecenia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzasZlecenia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywne)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywne)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdZleceniaKompletacji" />
+        <input type="submit" value=@Resource.Usun class="btn btn-danger" /> |
+        <a asp-action="Index">@Resource.PowrotDoListy</a>
+    </form>
+</div>

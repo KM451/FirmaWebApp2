@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Firma.Data.Model.PozycjaZZ>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.PozycjeZZ;
+}
+<h1>@Resource.PozycjeZZ</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdZleceniaZakupu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ilosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rabat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRealizacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywna)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZlecenieZakupu.IdZleceniaZakupu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ilosc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rabat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataRealizacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywna)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdPozycjiZleceniaZakupu">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdPozycjiZleceniaZakupu">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdPozycjiZleceniaZakupu">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

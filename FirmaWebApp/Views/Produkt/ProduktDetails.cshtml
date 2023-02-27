@@ -1,0 +1,36 @@
+﻿@model Firma.Data.Model.Produkt
+
+@{
+    ViewData["Title"] = "Szczegoly produkty";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="img2">
+    <a class="img2" href="@Url.Action("ProduktDetails",new {id=Model.IdProduktu})">
+        <img src="~/img/@Model.FotoURL" alt="@Model.Nazwa" />
+    </a>
+</div>
+<div class="kontener">
+    <table class="tab1">
+        <tr>
+            <td>Kod</td>
+            <td><b>@Model.Kod</b></td>
+        </tr>
+        <tr>
+            <td>Nazwa</td>
+            <td><b>@Model.Nazwa</b></td>
+        </tr>
+        <tr>
+            <td>Cena</td>
+            <td><b>@Model.Cena?.Where(c=>c.IdTypuCeny==1).Select(c=>c.Wartosc.ToString("N2") + " " + c.Waluta).FirstOrDefault()</b></td>
+        </tr>
+    </table>
+    <div class="txt1">
+        @Model.DodatkowaNazwa
+    </div>
+
+    <div class="kontener1">
+        <a class="btn btn-light" asp-action="AddToCart" asp-controller="Produkt" asp-route-id="@Model.IdProduktu">Dodaj do koszyka</a>
+        <a class="btn btn-light" asp-action="AddToCart" asp-controller="Cart" asp-route-id="@Model.IdProduktu">Kup teraz</a>
+        <a class="btn btn-light" asp-action="GoBack" asp-controller="TypyProduktow" asp-route-id="@Model.IdProduktu">Powrót</a>
+    </div>
+</div>

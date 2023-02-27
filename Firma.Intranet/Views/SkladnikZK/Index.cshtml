@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Firma.Data.Model.SkladnikZK>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.SkladnikiZlecenia;
+}
+<h1>@Resource.SkladnikiZlecenia</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdZleceniaKompletacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ilosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywny)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZlecenieKompletacji.IdZleceniaKompletacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ilosc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywny)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdSkladnika">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdSkladnika">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdSkladnika">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

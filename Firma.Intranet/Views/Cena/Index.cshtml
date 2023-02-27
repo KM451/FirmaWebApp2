@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Firma.Data.Model.Cena>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Ceny;
+}
+<h1>@Resource.Ceny</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypCeny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wartosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Waluta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywna)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypCeny.Typ)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Wartosc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Waluta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywna)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdCeny">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdCeny">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdCeny">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

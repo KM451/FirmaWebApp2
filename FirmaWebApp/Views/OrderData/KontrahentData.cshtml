@@ -1,0 +1,49 @@
+﻿@model Firma.Data.Model.Kontrahent
+
+@{
+    ViewData["Title"] = "KontrahentData";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<div>
+    <div class ="kontener2">
+        <div >
+            <h1>Dane</h1>
+            <h1>Identyfikacyjne</h1>
+        </div>
+    </div>
+    <div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4" >
+                <form asp-action="KontrahentData">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Akronim" class="control-label"></label>
+                        <input asp-for="Akronim" class="form-control" />
+                        <span asp-validation-for="Akronim" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nazwa" class="control-label"></label>
+                        <input asp-for="Nazwa" class="form-control" />
+                        <span asp-validation-for="Nazwa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nip" class="control-label"></label>
+                        <input asp-for="Nip" class="form-control" />
+                        <span asp-validation-for="Nip" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Dalej" class="btn btn-primary" 
+                        style="margin:20px 0px 0px 0px" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+*@

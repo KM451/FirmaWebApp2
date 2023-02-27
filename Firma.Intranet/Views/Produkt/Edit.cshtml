@@ -1,0 +1,127 @@
+﻿@model Firma.Data.Model.Produkt
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Edycja;
+}
+<h1>@Resource.Edycja</h1>
+<h4>@Resource.Produkt</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdProduktu" />
+            <div class="form-group">
+                <label asp-for="Kod" class="control-label"></label>
+                <input asp-for="Kod" class="form-control" />
+                <span asp-validation-for="Kod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nazwa" class="control-label"></label>
+                <input asp-for="Nazwa" class="form-control" />
+                <span asp-validation-for="Nazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DodatkowaNazwa" class="control-label"></label>
+                <input asp-for="DodatkowaNazwa" class="form-control" />
+                <span asp-validation-for="DodatkowaNazwa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JednostkaMiary" class="control-label"></label>
+                <input asp-for="JednostkaMiary" class="form-control" />
+                <span asp-validation-for="JednostkaMiary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Symbol" class="control-label"></label>
+                <input asp-for="Symbol" class="form-control" />
+                <span asp-validation-for="Symbol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SWW_PKWiU" class="control-label"></label>
+                <input asp-for="SWW_PKWiU" class="form-control" />
+                <span asp-validation-for="SWW_PKWiU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Producent" class="control-label"></label>
+                <input asp-for="Producent" class="form-control" />
+                <span asp-validation-for="Producent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTypu" class="control-label"></label>
+                <select asp-for="IdTypu" class="form-control" asp-items="ViewBag.IdTypu"></select>
+                <span asp-validation-for="IdTypu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoURL" class="control-label"></label>
+                <input asp-for="FotoURL" class="form-control" />
+                <span asp-validation-for="FotoURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StawkaVatZakupu" class="control-label"></label>
+                <input asp-for="StawkaVatZakupu" class="form-control" />
+                <span asp-validation-for="StawkaVatZakupu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StawkaVatSprzedazy" class="control-label"></label>
+                <input asp-for="StawkaVatSprzedazy" class="form-control" />
+                <span asp-validation-for="StawkaVatSprzedazy" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="OdwrotneObciazenie" /> @Html.DisplayNameFor(model => model.OdwrotneObciazenie)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PodzielonaPlatnosc" /> @Html.DisplayNameFor(model => model.PodzielonaPlatnosc)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="StawkaCla" class="control-label"></label>
+                <input asp-for="StawkaCla" class="form-control" />
+                <span asp-validation-for="StawkaCla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StwkaAkcyzy" class="control-label"></label>
+                <input asp-for="StwkaAkcyzy" class="form-control" />
+                <span asp-validation-for="StwkaAkcyzy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KodPcn" class="control-label"></label>
+                <input asp-for="KodPcn" class="form-control" />
+                <span asp-validation-for="KodPcn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kraj" class="control-label"></label>
+                <input asp-for="Kraj" class="form-control" />
+                <span asp-validation-for="Kraj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CzasKompletacji" class="control-label"></label>
+                <input asp-for="CzasKompletacji" class="form-control" />
+                <span asp-validation-for="CzasKompletacji" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CzyAktywna" /> @Html.DisplayNameFor(model => model.CzyAktywna)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdDostawcy" class="control-label"></label>
+                <select asp-for="IdDostawcy" class="form-control" asp-items="ViewBag.IdDostawcy"></select>
+                <span asp-validation-for="IdDostawcy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@Resource.Zapisz class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

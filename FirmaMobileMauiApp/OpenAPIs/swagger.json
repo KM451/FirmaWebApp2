@@ -1,0 +1,4241 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FirmaWebApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Adres": {
+      "get": {
+        "tags": [
+          "Adres"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdresyForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdresyForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdresyForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Adres"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Adres/{id}": {
+      "get": {
+        "tags": [
+          "Adres"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdresyForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Adres"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Adres"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Adres"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Cena": {
+      "get": {
+        "tags": [
+          "Cena"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CenyForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CenyForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CenyForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cena"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cena/{id}": {
+      "get": {
+        "tags": [
+          "Cena"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CenyForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cena"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cena"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cena"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Kontrahent": {
+      "get": {
+        "tags": [
+          "Kontrahent"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KontrahenciForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KontrahenciForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/KontrahenciForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Kontrahent"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Kontrahent/{id}": {
+      "get": {
+        "tags": [
+          "Kontrahent"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KontrahenciForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Kontrahent"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kontrahent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Kontrahent"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Monter": {
+      "get": {
+        "tags": [
+          "Monter"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Monter"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Monter"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Monter"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Monter"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Monter/{id}": {
+      "get": {
+        "tags": [
+          "Monter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Monter"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Monter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Monter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Monter"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/PozycjaZZ": {
+      "get": {
+        "tags": [
+          "PozycjaZZ"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PozycjeZZForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PozycjeZZForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PozycjeZZForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PozycjaZZ"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/PozycjaZZ/{id}": {
+      "get": {
+        "tags": [
+          "PozycjaZZ"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PozycjeZZForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PozycjaZZ"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PozycjaZZ"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PozycjaZZ"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Produkt": {
+      "get": {
+        "tags": [
+          "Produkt"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Produkt"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Produkt/{id}": {
+      "get": {
+        "tags": [
+          "Produkt"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Produkt"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Produkt"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produkt"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ProduktUbocznyZK": {
+      "get": {
+        "tags": [
+          "ProduktUbocznyZK"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ProduktUbocznyZK"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ProduktUbocznyZK/{id}": {
+      "get": {
+        "tags": [
+          "ProduktUbocznyZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduktyUboczneZKForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ProduktUbocznyZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduktUbocznyZK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ProduktUbocznyZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/RodzajTransportu": {
+      "get": {
+        "tags": [
+          "RodzajTransportu"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RodzajTransportu"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RodzajTransportu"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RodzajTransportu"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "RodzajTransportu"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/RodzajTransportu/{id}": {
+      "get": {
+        "tags": [
+          "RodzajTransportu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RodzajTransportu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RodzajTransportu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RodzajTransportu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RodzajTransportu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SkladnikZK": {
+      "get": {
+        "tags": [
+          "SkladnikZK"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkladnikZKForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkladnikZKForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SkladnikZKForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SkladnikZK"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SkladnikZK/{id}": {
+      "get": {
+        "tags": [
+          "SkladnikZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SkladnikZKForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SkladnikZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SkladnikZK"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SkladnikZK"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SposobDostawy": {
+      "get": {
+        "tags": [
+          "SposobDostawy"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobDostawy"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobDostawy"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobDostawy"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SposobDostawy"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SposobDostawy/{id}": {
+      "get": {
+        "tags": [
+          "SposobDostawy"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobDostawy"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SposobDostawy"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobDostawy"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SposobDostawy"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/SposobPlatnosci": {
+      "get": {
+        "tags": [
+          "SposobPlatnosci"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobPlatnosci"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobPlatnosci"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SposobPlatnosci"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SposobPlatnosci"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/SposobPlatnosci/{id}": {
+      "get": {
+        "tags": [
+          "SposobPlatnosci"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SposobPlatnosci"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SposobPlatnosci"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SposobPlatnosci"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SposobPlatnosci"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/TypCeny": {
+      "get": {
+        "tags": [
+          "TypCeny"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypCeny"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypCeny"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypCeny"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TypCeny"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TypCeny/{id}": {
+      "get": {
+        "tags": [
+          "TypCeny"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypCeny"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TypCeny"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypCeny"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TypCeny"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/TypProduktu": {
+      "get": {
+        "tags": [
+          "TypProduktu"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypProduktu"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypProduktu"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypProduktu"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TypProduktu"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TypProduktu/{id}": {
+      "get": {
+        "tags": [
+          "TypProduktu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypProduktu"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TypProduktu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypProduktu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TypProduktu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/TypTransakcji": {
+      "get": {
+        "tags": [
+          "TypTransakcji"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypTransakcji"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypTransakcji"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TypTransakcji"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TypTransakcji"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TypTransakcji/{id}": {
+      "get": {
+        "tags": [
+          "TypTransakcji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TypTransakcji"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TypTransakcji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TypTransakcji"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TypTransakcji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ZlecenieKompletacji": {
+      "get": {
+        "tags": [
+          "ZlecenieKompletacji"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZlecenieKompletacji"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ZlecenieKompletacji/{id}": {
+      "get": {
+        "tags": [
+          "ZlecenieKompletacji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaKompletacjiForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ZlecenieKompletacji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieKompletacji"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZlecenieKompletacji"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ZlecenieZakupu": {
+      "get": {
+        "tags": [
+          "ZlecenieZakupu"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ZlecenieZakupu"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ZlecenieZakupu/{id}": {
+      "get": {
+        "tags": [
+          "ZlecenieZakupu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZleceniaZakupuForView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ZlecenieZakupu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ZlecenieZakupu"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ZlecenieZakupu"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Adres": {
+        "required": [
+          "glowny",
+          "kodPoczowy",
+          "kraj",
+          "miejscowosc",
+          "nrDomu",
+          "poczta",
+          "siedziba",
+          "ulica"
+        ],
+        "type": "object",
+        "properties": {
+          "idAdresu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ulica": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "miejscowosc": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nrDomu": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string"
+          },
+          "nrLokalu": {
+            "type": "string",
+            "nullable": true
+          },
+          "kodPoczowy": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string"
+          },
+          "poczta": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string"
+          },
+          "kraj": {
+            "maxLength": 10,
+            "minLength": 1,
+            "type": "string"
+          },
+          "siedziba": {
+            "type": "boolean"
+          },
+          "glowny": {
+            "type": "boolean"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kontrahent": {
+            "$ref": "#/components/schemas/Kontrahent"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdresyForView": {
+        "type": "object",
+        "properties": {
+          "idAdresu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ulica": {
+            "type": "string",
+            "nullable": true
+          },
+          "miejscowosc": {
+            "type": "string",
+            "nullable": true
+          },
+          "nrDomu": {
+            "type": "string",
+            "nullable": true
+          },
+          "nrLokalu": {
+            "type": "string",
+            "nullable": true
+          },
+          "kodPoczowy": {
+            "type": "string",
+            "nullable": true
+          },
+          "poczta": {
+            "type": "string",
+            "nullable": true
+          },
+          "kraj": {
+            "type": "string",
+            "nullable": true
+          },
+          "siedziba": {
+            "type": "boolean"
+          },
+          "glowny": {
+            "type": "boolean"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cena": {
+        "required": [
+          "waluta",
+          "wartosc"
+        ],
+        "type": "object",
+        "properties": {
+          "idCeny": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTypuCeny": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wartosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "waluta": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "czyAktywna": {
+            "type": "boolean"
+          },
+          "produkt": {
+            "$ref": "#/components/schemas/Produkt"
+          },
+          "typCeny": {
+            "$ref": "#/components/schemas/TypCeny"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CenyForView": {
+        "type": "object",
+        "properties": {
+          "idCeny": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "produktDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTypuCeny": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typCenyNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "wartosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "waluta": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywna": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "KontrahenciForView": {
+        "type": "object",
+        "properties": {
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "akronim": {
+            "type": "string",
+            "nullable": true
+          },
+          "nazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "nip": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSposobuPlatnosci": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sposobPlatnosciNazwa": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Kontrahent": {
+        "required": [
+          "akronim",
+          "idKontrahenta",
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "akronim": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nip": {
+            "type": "string",
+            "default": "000-000-00-00",
+            "nullable": true
+          },
+          "idSposobuPlatnosci": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "sposobPlatnosci": {
+            "$ref": "#/components/schemas/SposobPlatnosci"
+          },
+          "adres": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Adres"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Monter": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idMontera": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieKompletacji": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieKompletacji"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PozycjaZZ": {
+        "required": [
+          "ilosc",
+          "rabat"
+        ],
+        "type": "object",
+        "properties": {
+          "idPozycjiZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "rabat": {
+            "type": "number",
+            "format": "double"
+          },
+          "dataRealizacji": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "czyAktywna": {
+            "type": "boolean"
+          },
+          "zlecenieZakupu": {
+            "$ref": "#/components/schemas/ZlecenieZakupu"
+          },
+          "produkt": {
+            "$ref": "#/components/schemas/Produkt"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PozycjeZZForView": {
+        "type": "object",
+        "properties": {
+          "idPozycjiZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "zlecenieZakupuDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "produktDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "produktJednostkaMiary": {
+            "type": "string",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "rabat": {
+            "type": "number",
+            "format": "double"
+          },
+          "dataRealizacji": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Produkt": {
+        "required": [
+          "jednostkaMiary",
+          "kod",
+          "nazwa",
+          "producent",
+          "stawkaVatSprzedazy",
+          "stawkaVatZakupu"
+        ],
+        "type": "object",
+        "properties": {
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kod": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dodatkowaNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "jednostkaMiary": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "swW_PKWiU": {
+            "type": "string",
+            "nullable": true
+          },
+          "producent": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "idTypu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fotoURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "stawkaVatZakupu": {
+            "type": "number",
+            "format": "double"
+          },
+          "stawkaVatSprzedazy": {
+            "type": "number",
+            "format": "double"
+          },
+          "odwrotneObciazenie": {
+            "type": "boolean"
+          },
+          "podzielonaPlatnosc": {
+            "type": "boolean"
+          },
+          "stawkaCla": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "stwkaAkcyzy": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "kodPcn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kraj": {
+            "type": "string",
+            "nullable": true
+          },
+          "czasKompletacji": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "czyAktywna": {
+            "type": "boolean"
+          },
+          "idDostawcy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typProduktu": {
+            "$ref": "#/components/schemas/TypProduktu"
+          },
+          "dostawca": {
+            "$ref": "#/components/schemas/Kontrahent"
+          },
+          "pozycjaZZ": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PozycjaZZ"
+            },
+            "nullable": true
+          },
+          "cena": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cena"
+            },
+            "nullable": true
+          },
+          "zlecenieKompletacji": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieKompletacji"
+            },
+            "nullable": true
+          },
+          "produktUbocznyZK": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProduktUbocznyZK"
+            },
+            "nullable": true
+          },
+          "skladnikZK": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkladnikZK"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduktUbocznyZK": {
+        "required": [
+          "ilosc"
+        ],
+        "type": "object",
+        "properties": {
+          "idPrUbocznego": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieKompletacji": {
+            "$ref": "#/components/schemas/ZlecenieKompletacji"
+          },
+          "produkt": {
+            "$ref": "#/components/schemas/Produkt"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduktyForView": {
+        "type": "object",
+        "properties": {
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kod": {
+            "type": "string",
+            "nullable": true
+          },
+          "nazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "dodatkowaNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "jednostkaMiary": {
+            "type": "string",
+            "nullable": true
+          },
+          "symbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "swW_PKWiU": {
+            "type": "string",
+            "nullable": true
+          },
+          "producent": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTypu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typProduktuNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "stawkaVatZakupu": {
+            "type": "number",
+            "format": "double"
+          },
+          "stawkaVatSprzedazy": {
+            "type": "number",
+            "format": "double"
+          },
+          "odwrotneObciazenie": {
+            "type": "boolean"
+          },
+          "podzielonaPlatnosc": {
+            "type": "boolean"
+          },
+          "stawkaCla": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "stwkaAkcyzy": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "kodPcn": {
+            "type": "string",
+            "nullable": true
+          },
+          "kraj": {
+            "type": "string",
+            "nullable": true
+          },
+          "czasKompletacji": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "czyAktywna": {
+            "type": "boolean"
+          },
+          "idDostawcy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dostawcaDane": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduktyUboczneZKForView": {
+        "type": "object",
+        "properties": {
+          "idPrUbocznego": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "zlecenieKompletacjiDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "produktDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RodzajTransportu": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idRodzajuTransportu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieZakupu": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieZakupu"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SkladnikZK": {
+        "required": [
+          "ilosc"
+        ],
+        "type": "object",
+        "properties": {
+          "idSkladnika": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieKompletacji": {
+            "$ref": "#/components/schemas/ZlecenieKompletacji"
+          },
+          "produkt": {
+            "$ref": "#/components/schemas/Produkt"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SkladnikZKForView": {
+        "type": "object",
+        "properties": {
+          "idSkladnika": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "zlecenieKompletacjiDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "produktDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SposobDostawy": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idSposobuDostawy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieZakupu": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieZakupu"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SposobPlatnosci": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idSposobuPlatnosci": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "kontrahent": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Kontrahent"
+            },
+            "nullable": true
+          },
+          "zlecenieZakupu": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieZakupu"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TypCeny": {
+        "required": [
+          "typ"
+        ],
+        "type": "object",
+        "properties": {
+          "idTypuCeny": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typ": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "cena": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cena"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TypProduktu": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idTypuProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "czySklep": {
+            "type": "boolean"
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "produkt": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Produkt"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TypTransakcji": {
+        "required": [
+          "nazwa"
+        ],
+        "type": "object",
+        "properties": {
+          "idTypuTransakcji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nazwa": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "uwagi": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywny": {
+            "type": "boolean"
+          },
+          "zlecenieZakupu": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ZlecenieZakupu"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZleceniaKompletacjiForView": {
+        "type": "object",
+        "properties": {
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kontrahentDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataWystawienia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "oczekiwanaDataRealizacji": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "potwierdzonaDataRealizacji": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "produktDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "idMontera": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "monterNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "priorytet": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywne": {
+            "type": "boolean"
+          },
+          "czasZlecenia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZleceniaZakupuForView": {
+        "type": "object",
+        "properties": {
+          "idZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "kontrahentDane": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTransakcji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "typTransakcjiNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSposobuDostawy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sposobDostawyNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "idRodzajuTransportu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rodzajTransportuNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSposobuPlatnosci": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sposobPlatnosciNazwa": {
+            "type": "string",
+            "nullable": true
+          },
+          "nrOferty": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyPotwierdzone": {
+            "type": "boolean"
+          },
+          "nrPotwierdzenia": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataWystawienia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "czyAktywne": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZlecenieKompletacji": {
+        "required": [
+          "dataWystawienia",
+          "ilosc",
+          "oczekiwanaDataRealizacji"
+        ],
+        "type": "object",
+        "properties": {
+          "idZleceniaKompletacji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataWystawienia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "oczekiwanaDataRealizacji": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "potwierdzonaDataRealizacji": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idProduktu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ilosc": {
+            "type": "number",
+            "format": "double"
+          },
+          "idMontera": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "priorytet": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyAktywne": {
+            "type": "boolean"
+          },
+          "czasZlecenia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "kontrahent": {
+            "$ref": "#/components/schemas/Kontrahent"
+          },
+          "monter": {
+            "$ref": "#/components/schemas/Monter"
+          },
+          "produkt": {
+            "$ref": "#/components/schemas/Produkt"
+          },
+          "produktUbocznyZK": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProduktUbocznyZK"
+            },
+            "nullable": true
+          },
+          "skladnikZK": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkladnikZK"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ZlecenieZakupu": {
+        "required": [
+          "dataWystawienia"
+        ],
+        "type": "object",
+        "properties": {
+          "idZleceniaZakupu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idKontrahenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idTransakcji": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSposobuDostawy": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idRodzajuTransportu": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idSposobuPlatnosci": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nrOferty": {
+            "type": "string",
+            "nullable": true
+          },
+          "czyPotwierdzone": {
+            "type": "boolean"
+          },
+          "nrPotwierdzenia": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalOrder": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "dataWystawienia": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "czyAktywne": {
+            "type": "boolean"
+          },
+          "kontrahent": {
+            "$ref": "#/components/schemas/Kontrahent"
+          },
+          "sposobDostawy": {
+            "$ref": "#/components/schemas/SposobDostawy"
+          },
+          "typTransakcji": {
+            "$ref": "#/components/schemas/TypTransakcji"
+          },
+          "rodzajTransportu": {
+            "$ref": "#/components/schemas/RodzajTransportu"
+          },
+          "sposobPlatnosci": {
+            "$ref": "#/components/schemas/SposobPlatnosci"
+          },
+          "pozycjaZZ": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PozycjaZZ"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

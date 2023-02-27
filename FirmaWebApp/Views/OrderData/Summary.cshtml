@@ -1,0 +1,112 @@
+﻿@model Firma.Data.Model.ZlecenieZakupu
+
+@{
+    ViewData["Title"] = "Summary";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<div>
+    <h1>Twoje zamówienie</h1>
+    <hr />
+    <td></td>
+    <td></td>
+    <dl class="row">
+        <dt></dt>
+        <dt></dt>
+        <dt class="col-sm-2">
+            Zamowienie nr: <b>@Html.DisplayFor(model => model.IdZleceniaZakupu)</b>
+        </dt>
+        <dt class="col-sm-2">
+            Data wystawienia: <b>@Html.DisplayFor(model => model.DataWystawienia)</b>
+        </dt>
+        <details>
+            <summary>> Dane identyfikacyjne:</summary>
+            <p>
+                Akronim: <b>@Html.DisplayFor(model => model.Kontrahent.Akronim)</b>
+            </p>
+            <p>
+                Nazwa: <b>@Html.DisplayFor(model => model.Kontrahent.Nazwa)</b>
+            </p>
+            @if (Model.Kontrahent.Nip is not null)
+            {
+                <p>Nip: <b>@Html.DisplayFor(model => model.Kontrahent.Nip)</b></p>
+            }
+        </details>
+        <details style="margin: 0px 0px 20px 0px">
+            <summary>> Dane adresowe:</summary>
+            <p>
+                Ulica: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.Ulica).FirstOrDefault()</b>
+            </p>
+            <p>
+                Miejscowość: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.Miejscowosc).FirstOrDefault()</b>
+            </p>
+            <p>
+                Nr domu: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.NrDomu).FirstOrDefault()</b>
+            </p>
+            @if (Model.Kontrahent.Adres.Where(a => a.IdKontrahenta == Model.IdKontrahenta && a.Glowny == true).Select(a => a.NrLokalu).FirstOrDefault() is not null)
+            {
+                <p>Nr lokalu: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.NrLokalu).FirstOrDefault()</b></p>
+            }
+            <p>
+
+                Kod pocztowy: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.KodPoczowy).FirstOrDefault()</b>
+            </p>
+            <p>
+                Poczta: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.Poczta).FirstOrDefault()</b>
+            </p>
+            <p>
+                Kraj: <b>@Model.Kontrahent.Adres.Where(a=>a.IdKontrahenta==Model.IdKontrahenta && a.Glowny==true).Select(a=>a.Kraj).FirstOrDefault()</b>
+            </p>
+        </details>
+        
+        <dt class="col-sm-2">
+            Pozycje zamówienia:
+        
+        </dt>
+        <table class="tab2">
+            <colgroup>
+            <col />    
+            <col style="width:100px" />    
+            <col />    
+            </colgroup>
+            <tr>
+                <th>
+                    Nazwa produktu
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Ilość
+                </th>
+                <th></th>
+            </tr>
+                @foreach (var item in Model.PozycjaZZ)
+                {
+                <tr>
+                    <td>
+                            @item.Produkt.Nazwa
+                    </td>
+                    <td>
+                            @item.Produkt.Cena?.Where(c=>c.IdTypuCeny==1).Select(c=>c.Wartosc.ToString("N2") + " " + c.Waluta).FirstOrDefault()
+                    </td>
+                    <td>
+                            @String.Format("{0:F}", item.Ilosc)
+                    </td>
+                    <td>
+                            @*<a href="#">Usuń</a>*@
+                    </td>
+                </tr>
+                }
+        </table>
+
+    </dl>
+    <dl>
+        Łączna wartość zamówienia:  <b>@Model.TotalOrder 
+        @Model.PozycjaZZ.Select(pz=>pz.Produkt.Cena.Where(c=>c.IdTypuCeny==1).Select(c=>c.Waluta).FirstOrDefault()).FirstOrDefault() </b>
+    </dl>
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdZleceniaZakupu">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

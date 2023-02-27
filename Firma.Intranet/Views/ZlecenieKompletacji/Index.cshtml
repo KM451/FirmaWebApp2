@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Firma.Data.Model.ZlecenieKompletacji>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.ZleceniaKompletacji;
+}
+<h1>@Resource.ZleceniaKompletacji</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdZleceniaKompletacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataWystawienia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OczekiwanaDataRealizacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PotwierdzonaDataRealizacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ilosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Priorytet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzasZlecenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kontrahent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdZleceniaKompletacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataWystawienia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OczekiwanaDataRealizacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PotwierdzonaDataRealizacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ilosc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priorytet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzasZlecenia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontrahent.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Monter.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Produkt.Nazwa)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdZleceniaKompletacji">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdZleceniaKompletacji">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdZleceniaKompletacji">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

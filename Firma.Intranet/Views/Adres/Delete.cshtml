@@ -1,0 +1,84 @@
+﻿@model Firma.Data.Model.Adres
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Usuwanie;
+}
+<h1>@Resource.Usuwanie</h1>
+<h3>@Resource.CzyNapewno1</h3>
+<div>
+    <h4>@Resource.Adres</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ulica)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ulica)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Miejscowosc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Miejscowosc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NrDomu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NrDomu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NrLokalu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NrLokalu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodPoczowy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodPoczowy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Poczta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Poczta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kraj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kraj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Siedziba)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Siedziba)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Glowny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Glowny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kontrahent)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kontrahent.Akronim)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdAdresu" />
+        <input type="submit" value=@Resource.Usun class="btn btn-danger" /> |
+        <a asp-action="Index">@Resource.PowrotDoListy</a>
+    </form>
+</div>

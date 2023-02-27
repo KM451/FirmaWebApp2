@@ -1,0 +1,34 @@
+﻿@model Firma.Data.Model.TypCeny
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Szczegoly;
+}
+<h1>@Resource.Szczegoly</h1>
+<div>
+    <h4>@Resource.TypCeny</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Typ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Typ)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uwagi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uwagi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CzyAktywny)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CzyAktywny)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdTypuCeny">@Resource.Edycja</a> |
+    <a asp-action="Index">@Resource.PowrotDoListy</a>
+</div>

@@ -1,0 +1,148 @@
+﻿@model IEnumerable<Firma.Data.Model.Produkt>
+@using Firma.Intranet.ViewResources
+@{
+    ViewData["Title"] = @Resource.Produkty;
+}
+<h1>@Resource.Produkty</h1>
+<p>
+    <a asp-action="Create">@Resource.DodajNowyEl</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DodatkowaNazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JednostkaMiary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SWW_PKWiU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StawkaVatZakupu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StawkaVatSprzedazy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OdwrotneObciazenie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PodzielonaPlatnosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StawkaCla)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StwkaAkcyzy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodPcn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kraj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzasKompletacji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzyAktywna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypProduktu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dostawca)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DodatkowaNazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JednostkaMiary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Symbol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SWW_PKWiU)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FotoURL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StawkaVatZakupu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StawkaVatSprzedazy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OdwrotneObciazenie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PodzielonaPlatnosc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StawkaCla)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StwkaAkcyzy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KodPcn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kraj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzasKompletacji)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CzyAktywna)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypProduktu.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dostawca.Nazwa)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdProduktu">@Resource.Edycja</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdProduktu">@Resource.Szczegoly</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdProduktu">@Resource.Usun</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

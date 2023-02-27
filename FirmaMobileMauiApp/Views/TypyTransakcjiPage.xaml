@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:FirmaMobileMauiApp.ViewModels"
+             xmlns:model="clr-namespace:FirmaMobileMauiApp.Models"
+             x:Class="FirmaMobileMauiApp.Views.TypyTransakcjiPage"
+             Title="{Binding Title}" 
+             x:Name="BrowseItemsPage"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <RefreshView x:DataType="viewModels:TypyTransakcjiViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:DataType="model:TypyTransakcjiForView" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Nazwa:" Grid.Row="0" Grid.Column="0"
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="Uwagi:" Grid.Row="1" Grid.Column="0"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" HorizontalOptions="End" Padding="5,0" Margin="20,0,0,0"/>
+                        <Label Text="{Binding Nazwa}" Grid.Row="0" Grid.Column="1"
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="13" />
+                        <Label Text="{Binding Uwagi}" Grid.Row="1" Grid.Column="1"
+                            Style="{DynamicResource ListItemDetailTextStyle}"
+                            FontSize="13" />
+                        <Button Text="Usuń" BackgroundColor="LightBlue" Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TypyTransakcjiViewModel}}, 
+                            Path=DeleteItemCommand}" CommandParameter="{Binding .}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:TypyTransakcjiViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>
